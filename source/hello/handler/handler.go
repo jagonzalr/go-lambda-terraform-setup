@@ -3,7 +3,6 @@ package handler
 import (
 	"context"
 	"encoding/json"
-	"fmt"
 
 	"github.com/aws/aws-lambda-go/events"
 )
@@ -25,7 +24,7 @@ type LambdaResponse struct {
 
 func (l lambdaHander) Run(ctx context.Context, event events.APIGatewayCustomAuthorizerRequest) (Response, error) {
 	lambdaResponse := LambdaResponse{
-		Message: fmt.Sprintf("Hello %s", l.randomName),
+		Message: "Hello " + l.randomName,
 	}
 
 	response, err := json.Marshal(lambdaResponse)

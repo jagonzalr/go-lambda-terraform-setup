@@ -26,7 +26,7 @@ locals {
 
 data "archive_file" "lambda_zip" {
   type        = "zip"
-  source_file = "../../bin/hello"
+  source_file = "../bin/hello"
   output_path = "bin/hello.zip"
 }
 
@@ -167,7 +167,7 @@ resource "aws_api_gateway_gateway_response" "internal_server_error" {
 resource "aws_api_gateway_resource" "endpoint" {
   rest_api_id = aws_api_gateway_rest_api.api.id
   parent_id   = aws_api_gateway_rest_api.api.root_resource_id
-  path_part   = "getCurrentDateTime"
+  path_part   = "hello"
 }
 
 resource "aws_api_gateway_method" "endpoint" {

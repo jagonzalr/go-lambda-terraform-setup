@@ -8,5 +8,5 @@ func Create() Handler {
 	// sess := session.Must(session.NewSession(aws.NewConfig()))
 	// kinesisClient := kinesis.New(sess)
 
-	return NewLambdaHandler(config.randomEnv)
+	return NewLambdaHandler(config.randomName)
 }

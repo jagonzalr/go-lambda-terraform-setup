@@ -5,13 +5,13 @@ import (
 )
 
 type config struct {
-	randomEnv string
+	randomName string
 }
 
 // NewConfigFromEnv -
 func NewConfigFromEnv() *config {
 
 	return &config{
-		randomEnv: os.Getenv("RANDOM_ENV"),
+		randomName: os.Getenv("RANDOM_NAME"),
 	}
 }
